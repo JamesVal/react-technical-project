@@ -31,6 +31,11 @@
     justify-content: flex-end;
 }
 
+.view-order-changed {
+    color: red;
+    font-style: italic;
+}
+
 @media only screen and (max-width: 768px) {
     .view-order-left-col {
         justify-content: center;
