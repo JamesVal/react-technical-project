@@ -15,7 +15,7 @@ class Login extends Component {
 	constructor(props) {
 		super(props);
 
-		if (this.props.location.state.logout_user == true) {
+		if (this.props.location.state != undefined && this.props.location.state.logout_user == true) {
 			this.props.logout();
 		}
 	}
