@@ -62,10 +62,10 @@ class ViewOrders extends Component {
                                     <p>Ordered by: {order.ordered_by || ''}</p>
                                 </div>
                                 <div className="col-md-4 d-flex view-order-middle-col">
-                                    <p>Order placed at {`${createdDate.getHours()}:${createdDate.getMinutes()}:${createdDate.getSeconds()}`}</p>
+                                    <p>Order placed at {`${createdDate.getHours()}`.padStart(2,'0')+`:`+`${createdDate.getMinutes()}`.padStart(2,'0')+`:`+`${createdDate.getSeconds()}`.padStart(2,'0')}</p>
                                     {
                                         createdDate.getTime() !== modifiedDate.getTime() ? 
-                                        <p className="view-order-changed">(Modified at {`${modifiedDate.getHours()}:${modifiedDate.getMinutes()}:${modifiedDate.getSeconds()}`})</p> :
+                                        <p className="view-order-changed">(Modified at {`${modifiedDate.getHours()}`.padStart(2,'0')+`:`+`${modifiedDate.getMinutes()}`.padStart(2,'0')+`:`+`${modifiedDate.getSeconds()}`.padStart(2,'0')})</p> :
                                         ""
                                     }
                                     <p>Quantity: {order.quantity}</p>
