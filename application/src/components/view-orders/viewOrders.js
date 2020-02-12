@@ -39,7 +39,7 @@ class ViewOrders extends Component {
             if (response.success) {
                 let curOrders = this.state.orders;
                 curOrders = curOrders.filter(order => {
-                    return order._id != id;
+                    return order._id !== id;
                 });
                 this.setState({ orders: curOrders });
             }
@@ -64,7 +64,7 @@ class ViewOrders extends Component {
                                 <div className="col-md-4 d-flex view-order-middle-col">
                                     <p>Order placed at {`${createdDate.getHours()}:${createdDate.getMinutes()}:${createdDate.getSeconds()}`}</p>
                                     {
-                                        createdDate.getTime() != modifiedDate.getTime() ? 
+                                        createdDate.getTime() !== modifiedDate.getTime() ? 
                                         <p className="view-order-changed">(Modified at {`${modifiedDate.getHours()}:${modifiedDate.getMinutes()}:${modifiedDate.getSeconds()}`})</p> :
                                         ""
                                     }

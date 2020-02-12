@@ -21,7 +21,7 @@ class OrderForm extends Component {
             editMode: false
         }
 
-        if (props.location.state != undefined && props.location.state.current_order != undefined) {
+        if (props.location.state !== undefined && props.location.state.current_order !== undefined) {
             this.state = props.location.state.current_order;
             this.state.editMode = true;
         }

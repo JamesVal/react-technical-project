@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { loginUser } from '../../../redux/actions/authActions';
 
 const mapActionsToProps = dispatch => ({
-  commenceLogin(email, password, cb) {
-    dispatch(loginUser(email, password, cb))
+  commenceLogin(email, password) {
+    return new Promise((resolve, reject) => {
+      dispatch(loginUser(email, password)).then(resolve);
+    })
   }
 })
 
@@ -16,7 +18,8 @@ class LoginForm extends Component {
 
   login(e) {
     e.preventDefault();
-    this.props.commenceLogin(this.state.email, this.state.password, this.props.onLogin);
+    this.props.commenceLogin(this.state.email, this.state.password)
+      .then(() => this.props.onLogin());
   }
 
   onChange(key, val) {
