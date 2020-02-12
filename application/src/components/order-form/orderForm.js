@@ -8,7 +8,7 @@ const ADD_ORDER_URL = `${SERVER_IP}/api/add-order`
 const EDIT_ORDER_URL = `${SERVER_IP}/api/edit-order`
 
 const mapStateToProps = (state) => ({
-    auth: state.auth,
+    auth: state.auth
 })
 
 class OrderForm extends Component {

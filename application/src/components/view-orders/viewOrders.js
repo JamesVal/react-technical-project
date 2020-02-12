@@ -71,7 +71,7 @@ class ViewOrders extends Component {
                                     <p>Quantity: {order.quantity}</p>
                                  </div>
                                  <div className="col-md-4 view-order-right-col">
-                                    <Link to={{pathname:"/edit-order", state: {current_order: order}}} ><button className="btn btn-success">Edit</button></Link>
+                                    <Link to={{pathname:"/edit-order", state: {current_order: order}}}><button className="btn btn-success">Edit</button></Link>
                                     <button className="btn btn-danger" onClick={this.deleteOrder(order._id)}>Delete</button>
                                  </div>
                             </div>
